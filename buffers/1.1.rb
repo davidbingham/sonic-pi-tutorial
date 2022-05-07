@@ -1,13 +1,14 @@
-# Welcome to Sonic Pi
-
-live_loop :flibble do
-  
-  live_loop :flibble do
-    sample :ambi_choir, rate: 0.2
-    sample :bd_haus, rate: 0.75
-    sleep 0.5
+live_loop :guit do
+  with_fx :echo, mix: 0.3, phase: 0.25 do
+    sample :guit_em9, rate: 0.5
   end
-  
-  sample :bd_haus, rate: 0.9
-  sleep 0.2
+  #  sample :guit_em9, rate: -0.5
+  sleep 8
+end
+
+live_loop :boom do
+  with_fx :reverb, room: 1 do
+    sample :bd_boom, amp: 10, rate: 1
+  end
+  sleep 8
 end
